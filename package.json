@@ -1,0 +1,21 @@
+{
+  "name": "relock",
+  "version": "1.0.0",
+  "description": "distributed lock bases on redis",
+  "main": "index",
+  "keywords": [
+    "distributed",
+    "lock",
+    "redis"
+  ],
+  "author": "sfz",
+  "dependencies": {
+    "bluebird": "^2.9.21",
+    "debug": "^2.1.3",
+    "redis": "^0.12.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1",
+    "should": "^5.2.0"
+  }
+}
