@@ -4,7 +4,7 @@ simple distributed lock base on redis
 ## API
 ```js
   
-  var key = "lock";
+  var resource = "resource_lock";
   var client = require('redis').createClient(port, host);
   
   var lock;
