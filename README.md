@@ -11,11 +11,12 @@ simple distributed lock base on redis
   Relock
     .lock(resource, ttl, client)
     .then(function(key) {
+      lock = key;
        ...
     })
   
   Relock
-    .unlock(resource, key, client)
+    .unlock(resource, lock, client)
     .then(function(result) {
       ...
     })
