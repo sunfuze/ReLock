@@ -57,17 +57,17 @@ module.exports = {
   }
 };
 
-var lockScript = `
+var lockScript = ("\
+\n\
+\n  return redis.call(\"set\", KEYS[1], ARGV[1], \"NX\", \"PX\", ARGV[2])\
+\n");
 
-  return redis.call("set", KEYS[1], ARGV[1], "NX", "PX", ARGV[2])
-`;
-
-var unLockScript = `
-  if redis.call("get", KEYS[1]) == ARGV[1] then
-    return redis.call("del", KEYS[1])
-  end
-  return false
-`;
+var unLockScript = ("\
+\n  if redis.call(\"get\", KEYS[1]) == ARGV[1] then\
+\n    return redis.call(\"del\", KEYS[1])\
+\n  end\
+\n  return false\
+\n");
 
 function randomValue() {
   try {
